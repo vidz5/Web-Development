@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script   src="http://code.jquery.com/jquery-1.9.1.min.js"   integrity="sha256-wS9gmOZBqsqWxgIVgA8Y9WcQOa7PgSIX+rPA0VL2rbQ="   crossorigin="anonymous"></script>
+
+<script>
+function myFunction() {
+ 	var fullName = document.forms["myForm"]["name"].value;
+    if (fullName == null || fullName == "") {
+        alert("Name must be filled out");
+		return false;
+	}
+      
+	var emailAddress = document.forms["myForm"]["EmailID"].value;
+    if (emailAddress == null || emailAddress == "") {
+        alert("EmailID must be filled out");
+        return false;
+	}
+
+	var intialPassword = document.forms["myForm"]["password1"].value;
+    if (intialPassword == null || intialPassword == "") {
+        alert("password must be filled out");
+        return false;
+	}
+
+	var confirmPassword = document.forms["myForm"]["Cpassword"].value;
+    if (confirmPassword == null || confirmPassword == "") {
+        alert("confirm must be filled out");
+        return false;
+	}
+	var fullNameRegX = /^[A-Z]/;
+    if(!fullName.match(fullNameRegX)) {
+    	alert("Invalid name is filled");
+		return false;
+	}
+	var emailAddressRegX = /^[w-.+]+@[a-zA-Z0-9.-]+.[a-zA-z0-9]/;
+	if(!emailAddress.match(emailAddressRegX)) {
+		alert("Invalid email entered");
+		return false;
+	}
+	var intialPasswordRegX = /^[]/;
+	if(!intialPassword.matcg(intialPassword)) {
+       alert("Pasword should contain upper case lower case and a character");
+       return false;
+	}
+	if ( confirmPassword != intialPassword){
+		alert("please make sure the passwords match");
+		return flase;
+	}
+	else {
+		return true;
+	}
+};
+</script>
+<title>CONWAY</title>
+</head>
+<body>
+<form name="myForm" action="" method="post">
+    <div class="form-group">
+	    <div class="container">
+		   <div class="col-lg-10">
+		        <div class="well">
+				   <div class="form-horizontal">
+			   		    <div class ="form-header col-lg-offset-2">
+                   		    <h3>Sign up form</h3>
+			   	       	</div><br />
+			   		    <div class="form-group">
+			   			    <div class="row">
+							    <label for="" class="col-lg-2 control-label">Full Name:  </label>
+							    <div class = "col-lg-8">
+							      	<input type = "text" id="name" class="form-control" placeholder="First and Last Name"/>
+								        
+							    </div>
+						    </div>
+					    </div>
+					    <div class="form-group">
+					     	<div class="row">
+					        	<label for="" class ="col-lg-2 control-label"> Email: </label>
+						      	<div class = "col-lg-8">
+						     		<input type=”text” id="EmailID" class="form-control" placeholder="asfdf@gmail.com">
+							     		
+							    </div>
+						    </div>
+					    </div>
+				  	    <div class="form-group">
+				 		     <div class="row">
+						        <label for="" class ="col-lg-2 control-label"> Password: </label>
+					         	<div class = "col-lg-8">
+			     			         <input type = "text" id="password1" class="form-control"placeholder="Enter your password"  maxlength="8"/>
+								     
+						        </div>
+					        </div>
+				        </div>
+					    <div class="form-group">
+							<div class="row">
+								<label for="" class="col-lg-2 control-label">Confirm Password: </label>
+								<div class = "col-lg-8">
+									<input type="text" id="Cpassword" class="form-control" placeholder="Confirm your password"  maxlength="8"/>
+								</div>
+							</div>
+						</div>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-10">
+									<div class="col-lg-4">
+										<div class="form-group">
+											<input type="button" class="btn btn-info col-lg-offset-5" value="Submit" onclick="myFunction()">
+										</div>
+									</div>	
+									<div class="col-lg-4">
+										<div class="form-group">
+											<input type="reset" class="btn btn-info" id="reset1" value="Reset">
+										</div>
+							   		</div>
+						   		</div>
+				 	   		</div>
+				   		</div>
+		       		</div>
+		   		</div>
+	    	</div>
+    	</div>
+    </div>
+</form>
+</body>
+
+</html>
